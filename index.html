@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Difasav| Mantenimiento y Rendimiento</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0F172A;
+    }header {
+  background-color: #1E293B;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #38BDF8;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+header img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #38BDF8;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  color: #94a3b8;
+}
+
+nav {
+  background-color: #1E293B;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #E2E8F0;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: background 0.3s;
+  border-radius: 6px;
+}
+
+nav a:hover, nav a:active {
+  background-color: #1E40AF;
+  color: white;
+}
+
+section {
+  display: none;
+  padding: 20px;
+  margin: 20px;
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  color: #38BDF8;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.tarjeta {
+  background-color: #334155;
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #E2E8F0;
+}
+
+.tarjeta p {
+  font-size: 0.95em;
+  color: #cbd5e1;
+}
+
+footer {
+  background-color: #1E293B;
+  color: #94a3b8;
+  text-align: center;
+  padding: 15px;
+}
+/* CONTENEDOR DE TARJETAS */
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* ESTILO DE CADA TARJETA */
+.tarjeta {
+  background-color: #334155;
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* TÍTULOS EN TARJETAS */
+.tarjeta h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #38BDF8;
+}
+
+/* TEXTO EN TARJETAS */
+.tarjeta p {
+  font-size: 0.95em;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* PARA SECCIONES COMO #reciclaje */
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #1E293B;
+  color: #E2E8F0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* H2 GENERAL */
+section h2 {
+  color: #38BDF8;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* RESPONSIVE (celulares) */
+@media (max-width: 600px) {
+  .tarjeta {
+    width: 90%;
+  }
+
+  .tarjetas {
+    gap: 20px;
+  }
+}
+body {
+  padding-bottom: 100px;
+}
+footer {
+  background-color: #1E293B;
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid #38BDF8;
+}
+  </style>
+</head>
+<body>  <header>
+    <img src="Logo 2.jpg.png" alt="Logo DISAFAV">
+    <h1>DISAFAV</h1>
+    <p>Cuidamos tu equipo, optimizamos tu trabajo</p>
+  </header>  <nav>
+    <a onclick="mostrarSeccion('inicio')">inicio</a>
+    <a onclick="mostrarSeccion('Limpieza')">Desechos</a>
+    <a onclick="mostrarSeccion('trabajo')">Formas de Trabajo</a>
+    <a onclick="mostrarSeccion('mantenimiento')">Mantenimiento</a>
+    
+    <a onclick="mostrarSeccion('mision')">Misión</a>
+    <a onclick="mostrarSeccion('Ayuda')">Ayuda</a>
+  </nav>  <section id="inicio" class="active">
+  <h2>Bienvenido a DISAFAV</h2>
+  
+  <p><strong>DIFASAV</strong> nace como un proyecto académico con visión empresarial, creado por jóvenes apasionados por la tecnología, el medio ambiente y el servicio al cliente. Ofrecemos soluciones técnicas presenciales y a distancia, adaptadas a las necesidades del usuario moderno.</p>
+
+  <p>En un mundo cada vez más digital, donde las fallas técnicas pueden afectar gravemente la productividad, DISAFAV surge para brindar soporte eficiente, mantenimiento preventivo y correctivo, así como gestión responsable de desechos tecnológicos. Nuestro compromiso va más allá del servicio técnico: buscamos generar impacto social, ambiental y profesional.</p>
+
+  <div class="tarjetas">
+    <div class="tarjeta">
+     <img src="gabinete.jfif" alt=""> 
+     <h3>🔧 Soluciones Integrales</h3>
+      <p>Ofrecemos mantenimiento a hardware, software, administración de redes y soporte técnico en tiempo real. Estamos preparados para resolver fallas de manera eficaz y rápida.</p>
+    </div>
+    <div class="tarjeta">
+      <img src="asesorias.jfif" alt="">
+      <h3>Capacitacion y asesorias</h3>
+      <p>Ofrecemos talleres, asesorias personalizadas y guias practicas para sacar el mayor provecho de tus equipos
+        tecnologicos. Aprende con Disafav!.</p>
+    </div>
+    <div class="tarjeta">
+      <img src="lider.jfif" alt="">
+      <h3>🤝 Proyecto con Propósito</h3>
+      <p>Este proyecto refleja la colaboración, liderazgo y visión de un equipo joven que busca transformar ideas en acción. Es un paso firme hacia el emprendimiento real.</p>
+    </div>
+  </div>
+
+  <p style="margin-top: 30px;">En DISAFAV trabajamos para que tu tecnología esté siempre a tu lado, sin interrupciones y con el respaldo de un equipo capacitado, confiable y comprometido.</p>
+</section>
+  <section id="trabajo">
+  <h2>🚀 Cómo trabajamos en DIFASAV</h2>
+  <p>En DISAFAV nos enfocamos en brindar un servicio rápido, eficiente y confiable, adaptado a las necesidades reales de nuestros clientes. Nuestro proceso está pensado para facilitar tu experiencia y resolver tus problemas tecnológicos sin complicaciones.</p>
+
+  <div class="tarjetas">
+    <div class="tarjeta">
+      <h3>🔍 Diagnóstico sin compromiso</h3>
+      <p>Evaluamos tu equipo de forma gratuita y sin obligación de contratar el servicio. Te explicamos el problema de forma clara y honesta.</p>
+    </div>
+    
+    <div class="tarjeta">
+      <h3>🏠 Servicio a domicilio</h3>
+      <p>Vamos hasta donde estés (zona local). Recolección, entrega y mantenimiento sin que tengas que salir de casa.</p>
+    </div>
+    
+    <div class="tarjeta">
+      <h3>📡 Soporte remoto</h3>
+      <p>¿Fuera de la ciudad? No hay problema. Atendemos por conexión remota en tiempo real para resolverte al instante.</p>
+    </div>
+    
+    <div class="tarjeta">
+      <h3>📑 Reportes claros</h3>
+      <p>Recibes un informe detallado del servicio realizado, con recomendaciones para mejorar el rendimiento de tu equipo.</p>
+    </div>
+    
+    <div class="tarjeta">
+      <h3>💬 Comunicación constante</h3>
+      <p>Nos mantenemos en contacto contigo por WhatsApp o correo para que siempre sepas el estado de tu equipo.</p>
+    </div>
+    
+    <div class="tarjeta">
+      <h3>🎓 Asesoría gratuita</h3>
+      <p>Te orientamos sobre compras, actualizaciones o mejoras que beneficien tu equipo a corto y largo plazo.</p>
+    </div>
+  </div>
+<span><strong>📞 Tel:</strong> 428 114 7039</span>
+    <span><strong>📧 Email:</strong> difasavcomweb@gmail.com</span>
+    <span><a href="https://www.instagram.com/difasav_servicios?igsh=MWl0b3pnYW83OWtxZA==" target="_blank" style="color: #38BDF8; text-decoration: none;">📷 Instagram</a></span>
+</section>
+
+     
+    
+      
+    
+  </section> <section id="mision">
+  <h2>Misión y Visión</h2>
+  <div class="tarjetas">
+    <div class="tarjeta">
+      <h3>🎯 Misión</h3>
+      <p>Somos una empresa especializada en dar soporte y mantenimiento a equipos de cómputo, ofreciendo servicios de calidad para nuestros clientes. Proporcionamos soluciones eficientes y oportunas sobre problemas del software y del hardware, siendo amigables con el cuidado del medio ambiente.</p>
+    </div>
+    <div class="tarjeta">
+      <h3>🚀 Visión</h3>
+      <p>Ser una empresa sólida y reconocida en el país, con estándares de calidad y confianza, para lograr ser líder en el sector de mantenimiento de equipo de cómputo. Estando siempre a tu alcance en todo momento. Además de ser una de las principales empresas en gestión de desechos tecnológicos, promoviendo la sostenibilidad y el reciclado tecnológico.</p>
+    </div>
+  </div>
+</section>
+  
+  </section>  <section id="mantenimiento">
+    <h2>Mantenimiento preventivo y correctivo</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <img src="Preventivo.jpg.jpg" alt="Preventivo">
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Evita fallas antes de que ocurran. Revisiones periódicas que aseguran un funcionamiento óptimo.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Correctivo.jpg.jpg" alt="Correctivo">
+        <h3>Mantenimiento Correctivo</h3>
+        <p>Reparamos equipos con fallas o daños. Restauramos el servicio de forma rápida y eficiente.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Industrial.jpg.webp" alt="Industrial">
+        <h3>Servicio Industrial</h3>
+        <p>Atendemos instalaciones grandes con soluciones personalizadas y profesionales.</p>
+      </div>
+    </div>
+  </section>  <section id="Ayuda">
+    <h2>Preguntas Frecuentes</h2>
+    <p><strong>¿Qué hago si tengo un problema con un compañero?</strong></p>
+    <p>Comunícalo con un encargado o personal autorizado de inmediato
+    <p><strong>¿Que metodos de contacto ofrecen?</strong></p> 
+    <p>Contamos con WhatsApp, Correo, Formulario!</p>
+    <p><strong>¿Tienen precios fijos o depende del problema?</strong></p>
+    <p>Ambas! pero tenemos precios que abarcan varias areas, instalar windows, reseteo, vacunar, limpieza preventiva, etc!</p>
+    <p><strong>¿Aceptan pagos con targeta, transferencia o efectivo?</strong></p>
+    <p>Por supuesto, estamos dispuestos a cualquier metodo de pago que sea de tu preferencia!</p>
+    <p><strong>¿Pueden dar soporte remoto si estoy en otra ciudad?</strong></p>
+    <p>Claro que si!, contamos con soporte a distancia, de manera super rapida y a un precio realmente aceptable!</p>
+    <p><strong>¿Atienden urgencias fuera del horario habitual?</strong></p>
+    <p>Nosotros contamos con servicio las 24 horas del dia, sin embargo solo aplica en soporte a distancia, en soporte presencial
+      tenemos horario reducido.
+    </p>
+    <p><strong>¿Que hago si el problema persiste despues del servico?</strong></p>
+    <p>No te preocupes!, al finalizar de cada problema obtendra un ticket, el cual si no a pasado al rededor de dos meses
+      nosotros lo resolvemos sin costo alguno.
+    </p>
+    <p><strong>¿Puedo cancelar o reagendar mi cita?</strong></p>
+    <p>Todo depende si no tenemos una cita ya prevista para la nueva fecha que gustas, pero si deseas
+      cancelarla, cobraremos el tiempo atendido.
+    </p>
+    <p><strong>¿Puedo hacer seguimiento a mi solicitud de servicio?</strong></p>
+    <p>Claro que si, en cualquier momento puede hacer el seguimiento de su servicio, si tiene mas dudas comuniquenos
+      a nuestro Numero deseado.
+    </p><h2>Horario de atención</h2>
+  
+  <h2 style="color: #38BDF8;">📨 Enviar un ticket de soporte</h2>
+  <p>¿Tienes un problema técnico? Envíanos tu caso y lo revisaremos lo antes posible.</p>
+
+  <form action="https://formsubmit.co/difasavcomweb.com" method="POST" style="display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin-top: 20px;">
+    
+    
+
+    <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 12px; border-radius: 8px; border: none;">
+    <input type="email" name="email" placeholder="Tu correo electrónico" required style="padding: 12px; border-radius: 8px; border: none;">
+    <textarea name="mensaje" rows="5" placeholder="Describe tu problema..." required style="padding: 12px; border-radius: 8px; border: none;"></textarea>
+
+    <button type="submit" style="background-color: #2563EB; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+      Enviar ticket
+    </button>
+  </form>
+  <li>Lunes a Viernes: 9:00 a.m. - 6:00 p.m.</li>
+      <li>Sábados: 10:00 a.m. - 2:00 p.m.</li>
+      <li>Domingos: Cerrado</li>
+</section>
+      
+    </ul>
+  </section>  <section id="Limpieza">
+    <h2></h2>
+    <p>Te ayudamos a resolver cualquier problema técnico con tu equipo. Escríbenos o visítanos directamente.</p>
+    <h2>Tecnologia</h2>
+    <div class="tarjetas">
+      <div class="tarjeta">
+      <img src="Toxico.jfif" alt="">
+        <h3>Compromiso ambiental</h3>
+        <p>El mal manejo de dispositivos electronicos pueden liberar metales pesados y sustancias toxicos al medio ambiente. En Disafav buscamos minimiza ese impacto mediante practicas responsables</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Viejos.jfif" alt="">
+        <h3>Que recolectamos?</h3>
+        <p>Recibimos computadoras viejas, laptops,teclados, ratones,discos duros, cargadores, tarjetas madre, cables y mas, todo evaluado para reciclaje o disposicion adecuada.</p>
+      </div>
+      <div class="tarjeta">
+        <img src="Reciclaje.jpg" alt="">
+        <h3>Como participar?</h3>
+        <p>Puedes llevar tus dispositivos a nuestras cemtros de acopio o agendar una recoleccion local gratuita, ayudemos juntos a construir un futuro mas limpio y responsable</p>
+      </div>
+    </div>
+  </section>  <section id="helpdesk" style="background-color: #1E293B; padding: 40px; color: #E2E8F0; border-radius: 12px; margin: 30px;">
+    <h2 style="text-align: center; color: #38BDF8; margin-bottom: 20px;">Help Desk - Mesa de Ayuda</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
+      ¿Tienes un problema técnico, dudas con tu equipo o necesitas asistencia personalizada? 
+      Nuestro equipo está listo para ayudarte.
+    </p>
+    <section id="mision">
+    <h2>Misión Y vision</h2>
+    <p>Somos una empresa especializada en dar soporte y mantenimiento de equipos de cómputo, comprometida con brindar soluciones confiables y efectivas a nuestros clientes.</p>  
+    <div style="text-align: center;">
+      <a href="mailto:difasavcomweb@gmail.com?subject=Soporte DISAFAV" 
+         style="background-color: #38BDF8; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+        📩 Abrir ticket de ayuda
+      </a>
+ 
+
+
+  <script>
+  function mostrarSeccion(id) {
+    var secciones = document.querySelectorAll("section");
+    secciones.forEach(function(seccion) {
+      seccion.classList.remove("active");
+    });
+
+    var seccionMostrada = document.getElementById(id);
+    if (seccionMostrada) {
+      seccionMostrada.classList.add("active");
+    }
+  }
+
+  window.onload = function() {
+    mostrarSeccion('inicio');
+  };
+</script>
+
+<footer style="position: fixed; bottom: 0; width: 100%; background-color: #1E293B; color: #94a3b8; text-align: center; padding: 10px 0; border-top: 1px solid #334155;">
+  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 14px;">
+    <span><strong>📞 Tel:</strong> 428 114 7039</span>
+    <span><strong>📧 Email:</strong> difasavcomweb@gmail.com</span>
+    <span><a href="https://www.instagram.com/difasav_servicios?igsh=MWl0b3pnYW83OWtxZA==" target="_blank" style="color: #38BDF8; text-decoration: none;">📷 Instagram</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
